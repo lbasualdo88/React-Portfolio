@@ -92,7 +92,7 @@ export default function Readmi() {
         </div>
 
         <div className="my-8">
-          <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-auto">
+          <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 object-cover ">
               <ImageGallery items={images} />
           </div>
         </div>
