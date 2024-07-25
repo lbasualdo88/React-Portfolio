@@ -56,7 +56,7 @@ export default function Header() {
       <button onClick={handleClick} className='md:hidden'>
         <img 
           className='md:hidden w-16 p-auto mr-3 cursor-pointer'
-          src="/public/img/iconos/menu-01-stroke-rounded.svg" 
+          src="/img/iconos/menu-01-stroke-rounded.svg" 
           alt="icono menu"
         />
       </button>
