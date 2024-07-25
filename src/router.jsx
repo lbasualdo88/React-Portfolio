@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             }
         ]       
     },
-    {
+   /* {
         path: '/login',
         element: <Login />,
     },
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 element: <RegistroProyecto />
             },
         ]
-    },
+    },*/
   
 ])
 
