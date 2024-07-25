@@ -10,6 +10,7 @@ const PortfolioProvider = ({ children }) => {
   const [iconosProyecto, setIconosProyecto] = useState([]);
   const [imagenesProyecto, setImagenesProyecto] = useState([]);
   const [proyectosConDatos, setProyectosConDatos] = useState([]);
+  const [cargando, setCargando] = useState(true);
 
   const obtenerIconos = async () => {
     try {
@@ -61,11 +62,21 @@ const PortfolioProvider = ({ children }) => {
  
  
   useEffect(() => {
-    obtenerIconos();
-    obtenerImagenes();
-    obtenerIconosProyecto();
-    obtenerImagenesProyecto();
-    obtenerProyectos();
+    const fetchData = async () => {
+      try {
+        await Promise.all([
+          obtenerIconos(),
+          obtenerImagenes(),
+          obtenerIconosProyecto(),
+          obtenerImagenesProyecto(),
+          obtenerProyectos(),
+        ]);
+      } finally {
+        setCargando(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -108,6 +119,7 @@ const PortfolioProvider = ({ children }) => {
         setImagenes,
         imagenesProyecto,
         setImagenesProyecto,
+        cargando,
       }}
     >
       {children}

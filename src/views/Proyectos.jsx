@@ -6,7 +6,7 @@ import Proyecto from "./Proyecto"
 
 export default function Proyectos() {
 
-  const { proyectos } = usePortafolio()
+  const { proyectos, cargando } = usePortafolio()
   const [filtros, setFiltros] = useState({});
 
   const handleBuscar = (datos) => {
@@ -37,12 +37,15 @@ export default function Proyectos() {
         onBuscar={handleBuscar}
       />
             <h1 className="text-5xl uppercase font-krub font-bold text-center py-4 text-color8 dark:text-dark-color8">Proyectos</h1>
-            {proyectos.filter(filtrarProyectos).map((proyecto, index) => (
-                <Proyecto
-                key={index}
-                proyecto={proyecto}
-                />
-              ))}
+            {cargando ? (
+              <div className="flex justify-center items-center h-64">
+                <div className="w-12 h-12 border-4 border-t-4 border-gray-200 border-t-gray-600 rounded-full animate-spin"></div>
+              </div>
+            ) : (
+              proyectos.filter(filtrarProyectos).map((proyecto, index) => (
+                <Proyecto key={index} proyecto={proyecto} />
+              ))
+      )}
     </motion.div>
     </>
   )

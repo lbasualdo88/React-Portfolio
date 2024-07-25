@@ -18,7 +18,7 @@ export default function FormacionAcademica() {
         transition={{ duration: 3 }}
       >
          <div>
-                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter ">
+                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter  md:mb-4">
                     <a             
                     href="https://www.aluracursos.com/">   
                         <img 
@@ -40,7 +40,7 @@ export default function FormacionAcademica() {
         transition={{ duration: 3 }}
       >
         <div>               
-                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter">
+                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
                     href="https://egg.live/">
                         <img 
@@ -62,7 +62,7 @@ export default function FormacionAcademica() {
         transition={{ duration: 3 }}
       >
          <div>               
-                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter">
+                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
                     href="https://www.udemy.com/">
                         <img 
@@ -83,7 +83,7 @@ export default function FormacionAcademica() {
         transition={{ duration: 3 }}
       >
         <div className='flex flex-col items-center pt-10'>               
-                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center w-auto shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter">
+                <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center w-auto shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
                     href="https://www.frsf.utn.edu.ar/tuti">
                         <img 

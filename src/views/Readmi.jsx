@@ -40,7 +40,7 @@ export default function Readmi() {
   const images = proyecto.imagenes.map(imagen => ({
     original: `/${imagen.image_path}`,
     thumbnail: `/${imagen.image_path}`,
-    description: imagen.description  // Opcional: agregar descripción si existe
+    
   }));
   
   
@@ -92,8 +92,11 @@ export default function Readmi() {
         </div>
 
         <div className="my-8">
-          <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 object-cover ">
-              <ImageGallery items={images} />
+          <div className="max-w-full mx-auto">
+              <ImageGallery 
+                  items={images} 
+                  showThumbnails={false}
+              />
           </div>
         </div>
       </section>
