@@ -38,8 +38,8 @@ export default function Readmi() {
  
   // Preparar las imágenes para react-image-gallery
   const images = proyecto.imagenes.map(imagen => ({
-    original: `/public/${imagen.image_path}`,
-    thumbnail: `/public/${imagen.image_path}`,
+    original: `/${imagen.image_path}`,
+    thumbnail: `/${imagen.image_path}`,
     description: imagen.description  // Opcional: agregar descripción si existe
   }));
   
