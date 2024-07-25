@@ -15,7 +15,7 @@ const variants = {
 
 const Inicio = () => {
   return (
-    <main className="bg-color9">
+    <main className="bg-color9 dark:bg-dark-color2">
       <motion.div
         initial="hidden"
         animate="visible"

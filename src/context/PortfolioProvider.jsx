@@ -16,7 +16,6 @@ const PortfolioProvider = ({ children }) => {
       const { data } = await clienteAxios('/api/icon');
       setIconos(data.data);
     } catch (error) {
-      console.log(error);
       console.error(error);
     }
   };
@@ -26,7 +25,7 @@ const PortfolioProvider = ({ children }) => {
       const { data } = await clienteAxios('/api/imagen');
       setImagenes(data.data);
     } catch (error) {
-      //console.log(error);
+      console.log(error);
     }
   };
 
@@ -35,7 +34,7 @@ const PortfolioProvider = ({ children }) => {
       const { data } = await clienteAxios('/api/icon-project');
       setIconosProyecto(data.data);
     } catch (error) {
-      //console.log(error);
+      console.log(error);
       
     }
   };
@@ -45,7 +44,7 @@ const PortfolioProvider = ({ children }) => {
       const { data } = await clienteAxios('/api/image-project');
       setImagenesProyecto(data.data);
     } catch (error) {
-      //console.log(error);
+      console.log(error);
     }
   };
 
@@ -54,12 +53,12 @@ const PortfolioProvider = ({ children }) => {
       const { data } = await clienteAxios('/api/project');
       setProyectos(data.data);
     } catch (error) {
-      //console.log(error);
+      console.log(error);
     }
   };
 
 
-  console.log(import.meta.env.VITE_API_URL);
+ 
  
   useEffect(() => {
     obtenerIconos();

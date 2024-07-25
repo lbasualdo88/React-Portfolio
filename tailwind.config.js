@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+   darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
@@ -7,16 +8,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        color1: '#ffffff',
+        color1: '#ffffff',// Background Primario
         color2: '#F5F5F5',
         color3: '#3730a3',
         color4: '#4f46e5',
         color5: '#757575',
         color6: '#DFE9F3',
         color7: '#2A7AE4',
-        color8: '#464646',
-        color9: '#EAF2FD',
-        color10: '#000000'
+        color8: '#464646',// Texto
+        color9: '#EAF2FD',// Background principal
+        color10: '#000000',
+        dark: {
+          color1: '#000000',// Dark Background principal
+          color2: '#1a1a1a',// Dark Background Secundario
+          color3: '#5b5b5b',
+          color4: '#6b6b6b',
+          color5: '#a1a1a1',// Dark Texto
+          color6: '#2a2a2a',
+          color7: '#3B3B3B',
+          color8: '#cccccc',// Dark Titulos
+          color9: '#4b4b4b',
+          color10: '#ffffff',//
+        },
       },
       fontFamily: {
         'Raleway': ['Raleway', 'sans-serif'],
@@ -33,6 +46,13 @@ export default {
       },
       boxShadow: {
         'custom': '0px 5px 15px 0px rgba(112, 112, 112, 0.48)',
+        'custom-dark': '0px 8px 20px 0px rgba(42, 122, 228, 1)',
+        'button-dark': '0px 4px 12px 0px rgba(42, 122, 228, 0.8)',
+        'hover-dark': '0px 6px 18px 0px rgba(255, 255, 255, 0.8)',
+        'custom-gray': '0px 5px 15px 0px rgba(204, 204, 204, 1)',
+      },
+      backgroundColor: {
+        'dark-overlay': 'rgba(0, 0, 0, 0.3)', // Fondo negro con 30% de opacidad
       },
     },
   },
@@ -68,8 +88,8 @@ export default {
           paddingTop: '24px',
         },
         '.fotoPerfil': {
-          height: '400px',
-          width: '400px',
+          height: '300px',
+          width: '300px',
         },
         '.icon-style': {
           maxHeight: '50px',
@@ -85,7 +105,7 @@ export default {
         },
         '.contenedor': {
           'max-width': '120rem',
-          margin:' 0 auto 0 auto',
+          margin:' 0 auto',
         },
         '.mostrar': {
           visibility: 'visible',
@@ -103,7 +123,7 @@ export default {
           'margin-top': '1rem',
           fontSize: '2rem',
           'text-decoration': 'none',
-         'text-transform': 'uppercase',
+          'text-transform': 'uppercase',
           'font-weight': 'bold',
           'border-radius': '.5rem',
           width: '90%',
@@ -115,4 +135,3 @@ export default {
     },
   ],
 }
-

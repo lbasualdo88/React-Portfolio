@@ -19,14 +19,14 @@ export default function Contenedor() {
   
   return (
     <>
-        <section id="contenedor" className=" bg-color1 p-8 mt-8 mb-8 rounded-lg overflow ">
-            <h2 className="text-color8 font-Raleway  text-6xl m-4 text-center">Ultimos Proyectos</h2>
+        <section id="contenedor" className=" bg-color1 p-8 mt-8 mb-8 rounded-lg overflow dark:bg-dark-color1">
+            <h2 className="text-color8 font-Raleway  text-6xl m-4 text-center dark:text-dark-color8">Ultimos Proyectos</h2>
             <UltimosProyectos direction="left" speed={100000} proyectos={shuffledArray1}/>
             <UltimosProyectos direction="right" speed={60000} proyectos={shuffledArray2}/>
             <UltimosProyectos direction="left" speed={10000} proyectos={shuffledArray3}/>
 
             <a 
-            className="flex justify-center items-center font-Raleway py-4 rounded-xl text-4xl border-2 border-solid border-color7 text-color7 md:w-60 w-auto hover:pointer m-auto hover:text-color1 hover:bg-color7" 
+            className="flex justify-center items-center font-Raleway py-4 rounded-xl text-4xl border-2 border-solid border-color7 text-color7 md:w-60 w-auto hover:pointer m-auto hover:text-color1 hover:bg-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark" 
             href="/proyectos"
         >Ver mas</a>
         </section>

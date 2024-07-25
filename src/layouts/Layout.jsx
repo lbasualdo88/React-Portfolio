@@ -7,18 +7,20 @@ export default function Layout() {
     const { id } = useParams();
     const location = useLocation();
 
+   
     return (
         <>
-            {location.pathname === '/proyectos' || location.pathname === `/proyecto/readmi/${id}` ? (
+        <body className=' dark:bg-dark-color1'>
+              {location.pathname === '/proyectos' || location.pathname === `/proyecto/readmi/${id}` ? (
                 <HeaderProyectos />
             ) : (
                 <Header />
             )}
-
-            <main className='flex-1 bg-color1 lg:h-max'>
+            <main className='flex-1 bg-color1 dark:bg-dark-color1 lg:h-max'>
                 <Outlet />
             </main>
             <Footer />
+        </body>
         </>
     );
 }

@@ -1,11 +1,11 @@
+// Header.jsx
 import { useEffect } from 'react';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from '../context/ThemeProvider';
 
 export default function Header() {
-
-
-  
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     function scrollNav() {
@@ -40,56 +40,52 @@ export default function Header() {
     }
   }
 
-
   return (
-    <div className="header flex md:flex-row justify-between items-center p-4">
-      <div className=''>
-      <a className='flex items-center cursor-pointer' href="/">
-                <img
-                    className='w-10 h-10 mr-4'
-                    src="/public/img/iconos/estrellas.png"
-                    alt="logo"
-                />
-                <h3 className="text-4xl font-Raleway">Leonardo Javier Basualdo</h3>
+    <div className="header dark:bg-dark-color1 flex md:flex-row justify-between items-center p-4">
+      <div className='flex'>
+        <FontAwesomeIcon
+          className='w-10 h-10 mr-4 cursor-pointer dark:text-dark-color8 text-color10'
+          icon={isDarkMode ? faSun : faMoon}
+          onClick={toggleTheme}
+        />
+        <a className='flex items-center cursor-pointer' href="/">
+          <h3 className="text-4xl font-Raleway dark:text-dark-color8">Leonardo Javier Basualdo</h3>
         </a>
       </div>
         
-          <button onClick={handleClick} className='md:hidden'>
-            <img 
-              className='md:hidden w-16 p-auto mr-3 cursor-pointer'
-              src="/public/img/iconos/menu-01-stroke-rounded.svg" 
-              alt="icono menu"
-            />
-          </button>
-          <nav className="nav hidden md:flex md:flex-row items-center gap-4 p-4">
-            <a
-              className="scroll hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl"
-              href="#contenedor"
-            >
-              Proyectos
-            </a>
-            <a
-              className="scroll hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl"
-              href="#sobremi"
-            >
-              Sobre Mi
-            </a>
-            <a
-              className="scroll hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl"
-              href="#educacion"
-            >
-              Educación
-            </a>
-            <a
-              className="scroll hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl"
-              href="#skill"
-            >
-              Skill
-            </a>
-           
-          </nav>
-        
-      
+      <button onClick={handleClick} className='md:hidden'>
+        <img 
+          className='md:hidden w-16 p-auto mr-3 cursor-pointer'
+          src="/public/img/iconos/menu-01-stroke-rounded.svg" 
+          alt="icono menu"
+        />
+      </button>
+      <nav className="nav hidden md:flex md:flex-row items-center gap-4 p-4">
+        <a
+          className="scroll border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          href="#contenedor"
+        >
+          Proyectos
+        </a>
+        <a
+          className="scroll border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          href="#sobremi"
+        >
+          Sobre Mi
+        </a>
+        <a
+          className="scroll border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          href="#educacion"
+        >
+          Educación
+        </a>
+        <a
+          className="scroll border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          href="#skill"
+        >
+          Skill
+        </a>
+      </nav>
     </div>
   );
 }

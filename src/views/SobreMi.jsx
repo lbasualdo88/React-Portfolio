@@ -9,12 +9,12 @@ export default function SobreMi() {
    
   return (
     <>
-            <main className="p-8" id="sobremi">
+            <main className="p-8 dark:bg-dark-color2 my-0" id="sobremi">
                 <section className=" p-8">
-                        <h2 className="text-4xl uppercase font-bold text-color8 pb-4 pl-14">Sobre Mi</h2>
+                        <h2 className="text-4xl uppercase font-bold text-color8 dark:text-dark-color8 pb-4 pl-14">Sobre Mi</h2>
                         
                             <div className="flex flex-col  items-center p-8">
-                                <p className="px-6 text-2xl md:text-3xl text-color8">
+                                <p className="px-6 text-2xl md:text-3xl text-color8 dark:text-dark-color5">
                                     Después de más de 13 años de experiencia en la industria farmacéutica, 
                                     he decidido cambiar de rumbo y convertirme en desarrollador de software.
                                    <br /> 
