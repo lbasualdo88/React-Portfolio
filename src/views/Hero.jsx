@@ -15,7 +15,7 @@ export default function Hero() {
             <div className="md:w-auto flex flex-col md:flex-row-reverse md:justify-between lg:flex-row-reverse lg:justify-between lg:items-center m-auto px-8 lg:px-52 gap-4"> 
                 <img 
                   className="w-40 h-40 md:w-60 md:h-60 xl:fotoPerfil rounded-full" 
-                  src="/public/img/perfil/fotolinkedin2.JPG" 
+                  src="/img/perfil/fotolinkedin2.JPG" 
                   alt="Imagen perfil"
                 />
               <div className="">
