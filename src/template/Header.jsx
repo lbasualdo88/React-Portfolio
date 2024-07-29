@@ -87,7 +87,7 @@ export default function Header() {
           Skill
         </a>
         <Link
-          className="scroll border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          className="border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
           to='/login'
         >
           Admin
