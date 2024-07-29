@@ -10,7 +10,7 @@ export default {
       colors: {
         color1: '#ffffff',// Background Primario
         color2: '#F5F5F5',
-        color3: '#3730a3',
+        color3: '#1E5B9F',
         color4: '#4f46e5',
         color5: '#757575',
         color6: '#DFE9F3',

@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import Inicio from './views/Inicio'
-//import Login from './login/Login'
-//import Admin from './admin/Admin'
-//import ProyectosAdmin from './admin/ProyectosAdmin'
-//import RegistroProyecto from './admin/RegistroProyecto'
+import Login from './login/Login'
+import Admin from './admin/Admin'
+import ProyectosAdmin from './admin/ProyectosAdmin'
+import RegistroProyecto from './admin/RegistroProyecto'
 import Proyectos from './views/Proyectos'
 import Readmi from './views/Readmi'
-//import PrivateRoute from './components/PrivateRoute'
+import PrivateRoute from './components/PrivateRoute'
 import Pagina404 from './views/Pagina404'
 
 
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             }
         ]       
     },
-   /* {
+    {
         path: '/login',
         element: <Login />,
     },
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 element: <RegistroProyecto />
             },
         ]
-    },*/
+    },
   
 ])
 

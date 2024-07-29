@@ -110,11 +110,12 @@ export default function RegistroProyecto() {
       
   return (
     <>
-         <main className="max-w-4xl m-auto mt-10 md:mt-28 items-center md:mb-12" >
-            <h1 className="text-6xl text-color8 font-bold text-center">Ingresar Proyecto</h1>
+    <main className="dark:bg-dark-color1 py-8 bg-color9 ">
+         <div className="bg-color1 max-w-4xl m-auto px-36 py-20 rounded-xl items-center dark:bg-dark-color1 shadow-md dark:shadow-custom-dark" >
+            <h1 className="text-6xl text-color8 font-bold text-center dark:text-dark-color8">Ingresar Proyecto</h1>
             
 
-            <div className="bg-gradient-to-b from-color6 to-color9 shadow-md rounded-md mt-10 px-5 py-10">
+            <div className="mt-10 px-5 py-10">
                 <form
                     onSubmit={handleSubmit}
                     noValidate
@@ -122,13 +123,13 @@ export default function RegistroProyecto() {
  
                     <div className="mb-4">
                         <label
-                            className="text-slate-800"
+                            className="text-slate-800 dark:text-dark-color8"
                             htmlFor="titulo"
                         >Titulo:</label>
                         <input 
                             type="text" 
                             id="email"
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 border-2 border-dark-color5 dark:border-dark-color1 border-solid rounded-md dark:bg-dark-color8"
                             name="titulo"
                             placeholder="Titulo del Proyecto"
                             ref={tituloRef}
@@ -137,13 +138,13 @@ export default function RegistroProyecto() {
 
                     <div className="mb-4">
                         <label
-                            className="text-slate-800"
+                            className="text-slate-800 dark:text-dark-color8"
                             htmlFor="description"
                         >Descripcion:</label>
                         <textarea 
                             type="text" 
                             id="description"
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                             name="description"
                             placeholder="Description"
                             ref={descripcionRef}
@@ -151,9 +152,9 @@ export default function RegistroProyecto() {
                     </div>
 
                     <div className="mb-4">
-                      <label className="block mb-2 text-2xl text-slate-800">
+                      <label className="block mb-2 text-2xl text-slate-800 dark:text-dark-color8">
                         Tipo de Proyecto:</label>
-                      <select className="border-gray-300 p-2 w-full rounded-md" ref={tipoRef}>
+                      <select className="p-2 w-full rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid" ref={tipoRef}>
                           <option>--Seleccione--</option>
                               <option>Academicos</option>
                               <option>Propios</option>
@@ -161,9 +162,9 @@ export default function RegistroProyecto() {
                     </div>
 
                     <div className="mb-4">
-                      <label className="block mb-2 text-2xl text-slate-800 ">
+                      <label className="block mb-2 text-2xl text-slate-800 dark:text-dark-color8 ">
                         Categoria:</label>
-                      <select className="border-gray-300 p-2 w-full rounded-md" ref={categoriaRef}>
+                      <select className="border-2 border-dark-color5 dark:border-dark-color1 border-solid p-2 w-full rounded-md dark:bg-dark-color8" ref={categoriaRef}>
                           <option>--Seleccione--</option>
                               <option>Full Stack</option>
                               <option>Back End</option>
@@ -171,7 +172,7 @@ export default function RegistroProyecto() {
                       </select>
                     </div>
                     <div className="mb-4">
-                        <label className="block mb-2 text-2xl text-slate-800">Iconos:</label>
+                        <label className="block mb-2 text-2xl text-slate-800 dark:text-dark-color8">Iconos:</label>
                         <div className="flex flex-wrap">
                             {Object.keys(iconos).map((icono) => (
                                 <div key={icono} className="flex items-center mb-2 w-1/2">
@@ -181,17 +182,17 @@ export default function RegistroProyecto() {
                                         name={icono}
                                         checked={iconos[icono]}
                                         onChange={handleIconChange}
-                                        className="mr-2 rounded-md"
+                                        className="mr-2 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                                     />
-                                    <label htmlFor={icono} className="text-slate-800">{icono}</label>
+                                    <label htmlFor={icono} className="text-slate-800 dark:text-dark-color8">{icono}</label>
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div className="mb-4">
-                      <label className="block mb-2 text-2xl text-slate-800 ">
+                      <label className="block mb-2 text-2xl text-slate-800 dark:text-dark-color8 ">
                         Repositorios Separados?:</label>
-                      <select className="border-gray-300 p-2 w-full rounded-md" onChange={handleReposChange}>
+                      <select className="border-2 border-dark-color5 dark:border-dark-color1 border-solid p-2 w-full rounded-md dark:bg-dark-color8" onChange={handleReposChange}>
                           <option>--Seleccione--</option>
                               <option>Si</option>
                               <option>No</option>                      
@@ -200,13 +201,13 @@ export default function RegistroProyecto() {
                     
                     <div className="mb-4">
                         <label
-                            className="text-slate-800"
+                            className="text-slate-800 dark:text-dark-color8"
                             htmlFor="repositorio"
-                        >Repo (Todo o Back):</label>
+                        >Repo {reposSeparados ? "BackEnd" : "Unico" }:</label>
                         <input 
                             type="text" 
                             id="repo_1"
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                             name="repo_1"
                             placeholder="Repositorio del Proyecto"
                             ref={repo_1Ref}
@@ -214,11 +215,11 @@ export default function RegistroProyecto() {
                     </div>
                     {reposSeparados && (
                         <div className="mb-4">
-                            <label className="text-slate-800" htmlFor="otroRepositorio">Repo (Front):</label>
+                            <label className="text-slate-800 dark:text-dark-color8" htmlFor="otroRepositorio">Repo FrontEnd:</label>
                             <input
                             type="text"
                             id="repo_2"
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                             name="repo_2"
                             placeholder="Otro Repositorio del Proyecto"
                             ref={repo_2Ref}
@@ -227,20 +228,20 @@ export default function RegistroProyecto() {
                     )}
                     <div className="mb-4">
                         <label
-                            className="text-slate-800"
+                            className="text-slate-800 dark:text-dark-color8"
                             htmlFor="repositorio"
                         >Deploy:</label>
                         <input 
                             type="text" 
                             id="deploy"
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                             name="deploy"
                             placeholder="URL del Proyecto"
                             ref={deployRef}
                         />
                     </div>  
                     <div className="mb-4">
-                        <label className="block mb-2 text-2xl text-slate-800" htmlFor="fotos">Fotos:</label>
+                        <label className="block mb-2 text-2xl text-slate-800 dark:text-dark-color8" htmlFor="fotos">Fotos:</label>
                         <input
                             type="file"
                             id="fotos"
@@ -248,13 +249,13 @@ export default function RegistroProyecto() {
                             accept="image/*"
                             multiple
                             onChange={handleFotosChange}
-                            className="mt-2 w-full p-3 bg-gray-50 rounded-md"
+                            className="mt-2 w-full p-3 bg-gray-50 rounded-md dark:bg-dark-color8 border-2 border-dark-color5 dark:border-dark-color1 border-solid"
                         />
                     </div>
                     <div className="mb-4">
                         {fotos.length > 0 && (
                             <div>
-                            <h3 className="text-slate-800">Vista previa de las fotos:</h3>
+                            <h3 className="text-slate-800 dark:text-dark-color8">Vista previa de las fotos:</h3>
                                 <div className="flex flex-wrap mt-2">
                                     {fotos.map((foto, index) => (
                                         <div key={index} className="w-1/2 p-1 relative">
@@ -280,12 +281,13 @@ export default function RegistroProyecto() {
                     <input
                         type="submit"
                         value="Subir Proyecto"
-                        className="bg-color4 hover:bg-color3 hover:text-color1 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer rounded-md"
+                        className="dark:bg-dark-color1 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:hover:shadow-hover-dark dark:border-color7 dark:shadow-button-dark dark:border-2 dark:text-color7 bg-color7 hover:bg-color3 hover:text-color1 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer rounded-xl"
                     />
                 </form>
             </div>
-    </main>
+    </div>
     
+    </main>
     </>
   )
 }

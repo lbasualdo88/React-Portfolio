@@ -2,6 +2,8 @@ import { createRef, useState } from 'react'
 import Alerta from '../components/Alerta'
 import { useAuth } from '../hooks/useAuth'
 
+
+
 export default function Login() {
     const emailRef = createRef()
     const passwordRef = createRef()
@@ -20,20 +22,23 @@ export default function Login() {
     }
 
     return (
-        <main className="max-w-4xl m-auto mt-10 md:mt-28 items-center">
-            <h1 className="text-6xl text-color8 font-bold text-center">Iniciar Sesión</h1>
-            <p className="text-3xl text-center text-color5">Administración</p>
+        <>
+        
+        <main className='flex dark:bg-dark-color1 h-screen w-auto bg-color9 '>
+        <div className="bg-color1 max-w-4xl m-auto px-36 py-20 rounded-xl items-center dark:bg-dark-color1 shadow-md dark:shadow-custom-dark">
+            <h1 className="text-6xl text-color8 font-bold text-center dark:text-dark-color8">Iniciar Sesión</h1>
+            <p className="text-3xl text-center text-color5 dark:text-dark-color5">Administración</p>
 
-            <div className="bg-white shadow-md rounded-md mt-10 px-5 py-10">
+            <div className="mt-10 px-5 py-10 dark:bg-dark-color1">
                 <form onSubmit={handleSubmit} noValidate>
                     {errores ? errores.map((error, i) => <Alerta key={i}>{error}</Alerta>) : null}
 
                     <div className="mb-4">
-                        <label className="text-slate-800" htmlFor="email">Email:</label>
+                        <label className="dark:text-dark-color8 text-color8" htmlFor="email">Email:</label>
                         <input
                             type="email"
                             id="email"
-                            className="mt-2 w-full p-3 bg-gray-50"
+                            className="dark:bg-dark-color3 mt-2 w-full p-3 bg-color2 rounded-xl dark:text-dark-color8"
                             name="email"
                             placeholder="Tu Email"
                             ref={emailRef}
@@ -41,11 +46,11 @@ export default function Login() {
                     </div>
 
                     <div className="mb-4">
-                        <label className="text-slate-800" htmlFor="password">Password:</label>
+                        <label className="dark:text-dark-color8 text-color8" htmlFor="password">Password:</label>
                         <input
                             type="password"
                             id="password"
-                            className="mt-2 w-full p-3 bg-gray-50"
+                            className="dark:bg-dark-color3 mt-2 w-full p-3 bg-color2 rounded-xl dark:text-dark-color8"
                             name="password"
                             placeholder="Tu Password"
                             ref={passwordRef}
@@ -55,10 +60,13 @@ export default function Login() {
                     <input
                         type='submit'
                         value="Iniciar Sesión"
-                        className="bg-color4 hover:bg-color3 hover:text-color1 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+                        className="dark:bg-dark-color1 dark:hover:text-color1 dark:hover:shadow-custom-gray dark:hover:border-color1 dark:shadow-button-dark dark:text-color7 border-2 border-color7 rounded-xl bg-color1 hover:bg-color7 hover:text-color1 text-color7 w-full mt-5 p-3 uppercase font-bold cursor-pointer"
                     />
                 </form>
             </div>
+        </div>
         </main>
+       
+        </>
     )
 }
