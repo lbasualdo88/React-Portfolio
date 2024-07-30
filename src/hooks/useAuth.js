@@ -7,8 +7,8 @@ export const useAuth = () => {
     const token = localStorage.getItem('AUTH_TOKEN')
     const navigate = useNavigate()
 
-    const { data: user, error, mutate } = useSWR(token ? '/api/user' : null, () =>
-        token ? clienteAxios('/api/user', {
+    const { data: user, error, mutate } = useSWR('/api/user', () =>
+        clienteAxios('/api/user', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -16,14 +16,13 @@ export const useAuth = () => {
         .then(res => res.data)
         .catch(error => {
             throw Error(error?.response?.data?.errors)
-        }) : null
+        })
     )
 
     const login = async (datos, setErrores) => {
         try {
             // Obtener el token CSRF
             await clienteAxios.get('/sanctum/csrf-cookie');
-            
             const { data } = await clienteAxios.post('/api/login', datos)
             localStorage.setItem('AUTH_TOKEN', data.token)
             setErrores([])
