@@ -6,7 +6,7 @@ import clienteAxios from '../config/axios'
 export const useAuth = () => {
     const token = localStorage.getItem('AUTH_TOKEN')
     const navigate = useNavigate()
-/*
+
     const { data: user, error, mutate } = useSWR('/api/user', () =>
         clienteAxios.post('/api/user', {
             headers: {
@@ -18,7 +18,7 @@ export const useAuth = () => {
             throw Error(error?.response?.data?.errors)
         })
     )
-*/
+
     const login = async (datos, setErrores) => {
         try {
             // Obtener el token CSRF
@@ -28,7 +28,7 @@ export const useAuth = () => {
             const { data } = await clienteAxios.post('/api/login', datos)
             localStorage.setItem('AUTH_TOKEN', data.token)
             setErrores([])
-            //await mutate()
+            await mutate()
             navigate('/admin');
         } catch (error) {
             console.log("Los datos del formulario: "+ datos); 
