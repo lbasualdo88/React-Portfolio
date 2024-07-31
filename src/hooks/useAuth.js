@@ -22,7 +22,9 @@ export const useAuth = () => {
     const login = async (datos, setErrores) => {
         try {
             // Obtener el token CSRF
-            await clienteAxios.get('/sanctum/csrf-cookie');
+            console.log("Los datos del formulario: "+ datos); 
+            const token = await clienteAxios.get('/sanctum/csrf-cookie');
+            console.log("el token: " + token)
             const { data } = await clienteAxios.post('/api/login', datos)
             localStorage.setItem('AUTH_TOKEN', data.token)
             setErrores([])
