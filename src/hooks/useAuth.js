@@ -31,6 +31,8 @@ export const useAuth = () => {
             await mutate()
             navigate('/admin');
         } catch (error) {
+            console.log("Los datos del formulario: "+ datos); 
+            console.log("el token: " + token)
             setErrores(Object.values(error.response.data.errors))
         }
     }
