@@ -31,7 +31,7 @@ export default function Admin() {
                     to="/admin"> Mis Proyectos</Link>
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
-                    to="/registroProyecto">Crear Proyecto</Link>
+                    to="admin/registroProyecto">Crear Proyecto</Link>
                     <button
                     onClick={handleLogout}
                     className="dark:border-color7 dark:bg-color7 dark:text-color10 dark:hover:bg-dark-color1 dark:hover:border-dark-color10 dark:hover:shadow-custom-gray dark:hover:text-dark-color10 text-color1 bg-color7 hover:bg-color3 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl" 
