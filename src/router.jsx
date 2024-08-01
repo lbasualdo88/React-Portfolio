@@ -21,22 +21,22 @@ const router = createBrowserRouter([
                 element: <Inicio />
             },
             {
-                path: '/proyectos',
+                path: 'proyectos',
                 element: <Proyectos />
             },
             {
-                path: '/proyecto/readmi/:id',
+                path: 'proyecto/readmi/:id',
                 element: <Readmi />
             }
            
         ]       
     },
     {
-        path: '/login',
+        path: 'login',
         element: <Login />,
     },
     {
-        path: '/admin',
+        path: 'admin',
         element: (      
             <PrivateRoute>
                 <Admin />
@@ -48,13 +48,13 @@ const router = createBrowserRouter([
                 element: <ProyectosAdmin />
             },
             {
-                path: '/admin/registroProyecto',
+                path: 'admin/registroProyecto',
                 element: <RegistroProyecto />
             },
         ]
     },
     {
-        path: '/*',
+        path: '*',
         element: <Pagina404 />,
     }
   

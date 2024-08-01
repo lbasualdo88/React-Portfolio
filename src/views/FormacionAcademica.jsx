@@ -88,7 +88,7 @@ export default function FormacionAcademica() {
                     href="https://www.frsf.utn.edu.ar/tuti">
                         <img 
                             className="m-auto w-72 max-h-40 dark:opacity-100 dark:filter dark:brightness-75" 
-                            src="public/img/ImgEducacion/utn.jpg" 
+                            src="/img/ImgEducacion/utn.jpg" 
                             alt="imagen utn"/>
                     </a>
                 </div>
