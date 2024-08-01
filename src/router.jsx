@@ -27,11 +27,8 @@ const router = createBrowserRouter([
             {
                 path: '/proyecto/readmi/:id',
                 element: <Readmi />
-            },
-            {
-                path: '*',
-                element: <Pagina404 />,
             }
+           
         ]       
     },
     {
@@ -56,6 +53,10 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: '/*',
+        element: <Pagina404 />,
+    }
   
 ])
 
