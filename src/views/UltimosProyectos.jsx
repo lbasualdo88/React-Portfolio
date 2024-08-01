@@ -9,8 +9,8 @@ export default function UltimosProyectos({ direction = 'left', speed, proyectos 
 
     useEffect(() => {
         const totalWidth = carouselRef.current.scrollWidth / 3;
+        const xValues = direction === 'left' ? [0, -totalWidth] : [-1000, totalWidth];
         const animateCarousel = async () => {
-         const xValues = direction === 'left' ? [0, -totalWidth] : [-1000, totalWidth];
           await controls.start({
             x: xValues,
             transition: {
@@ -25,6 +25,7 @@ export default function UltimosProyectos({ direction = 'left', speed, proyectos 
         };
     
         animateCarousel();
+        return () => controls.stop();
       }, [controls, direction, speed]);
 
       const displayProyectos = direction === 'right' ? [...proyectos].reverse() : proyectos;
