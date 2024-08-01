@@ -36,7 +36,7 @@ export default function Login() {
                     <div className="mb-4">
                         <label className="dark:text-dark-color8 text-color8" htmlFor="email">Email:</label>
                         <input
-                            type="password"
+                            type="email"
                             id="email"
                             className="dark:bg-dark-color3 mt-2 w-full p-3 bg-color2 rounded-xl dark:text-dark-color8"
                             name="email"
