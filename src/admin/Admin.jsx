@@ -18,7 +18,7 @@ export default function Admin() {
   return (
     <>
  
-        <div className="flex flex-col gap-4 lg:flex-row md:justify-between py-8 items-center w-screen dark:bg-dark-color1">
+        <div className="flex flex-col gap-4 lg:flex-row md:justify-between py-8 items-center w-full dark:bg-dark-color1">
             <Link to="/admin">        
                 <h1 className="text-6xl text-color8 font-semibold text-center m-4 dark:text-dark-color8">Developer
                     <span className="text-3xl text-color5 dark:text-dark-color5">Full Stack</span> 

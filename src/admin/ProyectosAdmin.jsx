@@ -6,7 +6,7 @@ export default function ProyectosAdmin() {
 
   return (
     <>
-    <div className="bg-gray-200 dark:bg-dark-color1 p-8  flex flex-col h-full">
+    <div className="bg-gray-200 dark:bg-dark-color1 p-8  flex flex-col h-screen">
         <div className="w-auto  p-8">
             <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Proyectos</h1>
         </div>
