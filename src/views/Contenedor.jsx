@@ -25,7 +25,7 @@ export default function Contenedor() {
             <h2 className="text-color8 font-Raleway  text-6xl m-4 text-center dark:text-dark-color8">Ultimos Proyectos</h2>
             <UltimosProyectos direction="left" speed={100000} proyectos={shuffledArray1}/>
             <UltimosProyectos direction="right" speed={60000} proyectos={shuffledArray2}/>
-            <UltimosProyectos direction="left" speed={20000} proyectos={shuffledArray3}/>
+            <UltimosProyectos direction="left" speed={10000} proyectos={shuffledArray3}/>
 
             <Link 
             className="flex justify-center items-center font-Raleway py-4 rounded-xl text-4xl border-2 border-solid border-color7 text-color7 md:w-60 w-auto hover:pointer m-auto hover:text-color1 hover:bg-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark" 
