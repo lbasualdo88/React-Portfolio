@@ -4,17 +4,15 @@ import { motion, useAnimation } from 'framer-motion';
 export default function UltimosProyectos({ direction = 'left', speed, proyectos }) {
   const controls = useAnimation();
   const carouselRef = useRef();
-  const totalWidth = useRef(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  useEffect(() => {
-    const calculateWidth = () => {
-      totalWidth.current = carouselRef.current.scrollWidth / 3;
-    };
+useEffect(() => {
+  const totalWidth = carouselRef.current.scrollWidth / 3;
+  const xValues = direction === 'left' ? [0, -totalWidth] : [-totalWidth, 0];
 
-    calculateWidth(); // Calculate the width initially
-
+  if (!isAnimating) {
+    setIsAnimating(true);
     const animateCarousel = async () => {
-      const xValues = direction === 'left' ? [0, -totalWidth.current] : [-totalWidth.current, 0];
       await controls.start({
         x: xValues,
         transition: {
@@ -29,11 +27,13 @@ export default function UltimosProyectos({ direction = 'left', speed, proyectos 
     };
 
     animateCarousel();
+  }
 
-    // Recalculate width on window resize
-    window.addEventListener('resize', calculateWidth);
-    return () => window.removeEventListener('resize', calculateWidth);
-  }, [controls, direction, speed]);
+  return () => {
+    controls.stop();
+    setIsAnimating(false);
+  };
+}, [controls, direction, speed, isAnimating]);
 
   const displayProyectos = direction === 'right' ? [...proyectos].reverse() : proyectos;
   const concatenatedProyectos = displayProyectos.concat(displayProyectos).concat(displayProyectos);
