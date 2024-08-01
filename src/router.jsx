@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 element: <Readmi />
             },
             {
-                path: '/*',
+                path: '*',
                 element: <Pagina404 />,
             }
         ]       
