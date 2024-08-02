@@ -20,7 +20,10 @@ export default function FormacionAcademica() {
          <div>
                 <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter  md:mb-4">
                     <a             
-                    href="https://www.aluracursos.com/">   
+                    href="https://www.aluracursos.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >   
                         <img 
                             className="m-auto max-h-40 dark:opacity-100 dark:filter dark:brightness-75" 
                             src="/img/ImgEducacion/alura.png" 
@@ -42,7 +45,10 @@ export default function FormacionAcademica() {
         <div>               
                 <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
-                    href="https://egg.live/">
+                    href="https://egg.live/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
                         <img 
                             className="m-auto max-h-40 dark:opacity-100 dark:filter dark:brightness-75" 
                             src="/img/ImgEducacion/Egg-logo.jpg" 
@@ -64,7 +70,10 @@ export default function FormacionAcademica() {
          <div>               
                 <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center  shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
-                    href="https://www.udemy.com/">
+                    href="https://www.udemy.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
                         <img 
                             className="m-auto max-h-40 dark:opacity-100 dark:filter dark:brightness-75" 
                             src="/img/ImgEducacion/udemy.png" 
@@ -85,7 +94,10 @@ export default function FormacionAcademica() {
         <div className='flex flex-col items-center pt-10'>               
                 <div className="flex flex-col dark:shadow-custom-gray hover:scale-90 justify-center w-auto shadow-custom rounded-xl p-8 bg-color1 dark:bg-opacity-75 dark:filter md:mb-4">
                     <a                                      
-                    href="https://www.frsf.utn.edu.ar/tuti">
+                    href="https://www.frsf.utn.edu.ar/tuti"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
                         <img 
                             className="m-auto w-72 max-h-40 dark:opacity-100 dark:filter dark:brightness-75" 
                             src="/img/ImgEducacion/utn.jpg" 

@@ -58,6 +58,8 @@ export default function Proyecto({ proyecto }) {
             <a
               className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
               href={proyecto.repository_url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Repo
             </a>
@@ -65,6 +67,8 @@ export default function Proyecto({ proyecto }) {
               <a
                 className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
                 href="/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Repo
               </a>
@@ -72,6 +76,8 @@ export default function Proyecto({ proyecto }) {
             <a
               className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
               href={proyecto.deployed_url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Deploy
             </a>
