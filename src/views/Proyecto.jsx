@@ -66,7 +66,7 @@ export default function Proyecto({ proyecto }) {
             {proyecto.repository2_url ? (
               <a
                 className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
-                href="/"
+                href={proyecto.repository2_url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
