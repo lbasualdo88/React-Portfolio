@@ -8,7 +8,7 @@ export const useAuth = () => {
     const navigate = useNavigate()
 
     const { data: user, error, mutate } = useSWR('/api/user', () =>
-        clienteAxios.post('/api/user', {
+        clienteAxios.get('/api/user', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
