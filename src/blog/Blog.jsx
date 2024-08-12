@@ -3,6 +3,7 @@ import useBlog from '../hooks/useBlog';
 
 export default function Blog() {
     const { post } = useBlog();
+    const baseURL = import.meta.env.VITE_API_URL;
 
     const createContentWithImages = (post) => {
         let description = post.description; 
@@ -11,7 +12,7 @@ export default function Blog() {
         if (post.images && post.images.length > 0) {
             post.images.forEach((image, index) => {
                 const regex = new RegExp(`\\{imagen\\[${index}\\]\\}`, 'g');
-                const imageTag = `<img src="http://localhost:8000/storage/${image.image_path}" alt="imagen ${index}" />`;
+                const imageTag = `<img src="${baseURL}/storage/${image.image_path}" alt="imagen ${index}" />`;
                 description = description.replace(regex, imageTag);
                 
             });
@@ -29,8 +30,8 @@ export default function Blog() {
                     <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
                         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                             <div className="flex flex-col">
-                                <h2 className="font-bold text-3xl text-color8 dark:text-dark-color8">{post.title}</h2>
-                                <span className="text-2xl text-color5 dark:text-dark-color5">{post.categoria}</span>
+                                <h2 className="font-bold text-3xl text-color8 dark:text-dark-color8 text-center">{post.title}</h2>
+                                <span className="text-2xl text-color5 dark:text-dark-color5">Categoria: {post.categoria}</span>
                                 <div className="text-2xl text-color5 dark:text-dark-color5" dangerouslySetInnerHTML={{ __html: createContentWithImages(post) }} />
                             </div>
                         </div>
