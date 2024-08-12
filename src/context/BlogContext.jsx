@@ -36,6 +36,7 @@ const BlogProvider = ({ children }) => {
             setPost(post.filter((p) => p.id !== postId));
         } catch (error) {
             console.log(error);
+            console.error(error);
         }
     };
 
