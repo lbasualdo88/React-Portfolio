@@ -4,6 +4,7 @@ import useBlog from '../hooks/useBlog';
 export default function Blog() {
     const { post } = useBlog();
     const baseURL = import.meta.env.VITE_API_URL;
+    console.log(baseURL);
 
     const createContentWithImages = (post) => {
         let description = post.description; 
@@ -14,7 +15,7 @@ export default function Blog() {
                 const regex = new RegExp(`\\{imagen\\[${index}\\]\\}`, 'g');
                 const imageTag = `<img src="${baseURL}/storage/${image.image_path}" alt="imagen ${index}" />`;
                 description = description.replace(regex, imageTag);
-                
+                console.log(imageTag)
             });
         }
         return description;
