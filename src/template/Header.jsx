@@ -88,6 +88,12 @@ export default function Header() {
         </a>
         <Link
           className="border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
+          to='/blog'
+        >
+          Blog
+        </Link>
+        <Link
+          className="border-2 dark:hover:border-dark-color8 border-transparent dark:bg-dark-color1 dark:border-solid dark:hover:shadow-custom-gray hover:bg-color9 hover:rounded-3xl p-4 text-color8 no-underline text-3xl dark:text-dark-color8"
           to='/login'
         >
           Admin

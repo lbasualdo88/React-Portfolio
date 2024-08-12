@@ -28,10 +28,16 @@ export default function Admin() {
                 <nav className="flex flex-col md:flex-row contenedor gap-4 md:gap-20 mb-1">
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
-                    to="/admin"> Mis Proyectos</Link>
+                    to="/admin/misProyectos"> Mis Proyectos</Link>
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
-                    to="admin/registroProyecto">Crear Proyecto</Link>
+                    to="/admin/misPost"> Mis Post</Link>
+                    <Link
+                    className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
+                    to="/admin/registroPost"> Crear Post</Link>
+                    <Link
+                    className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
+                    to="/admin/registroProyecto">Crear Proyecto</Link>
                     <button
                     onClick={handleLogout}
                     className="dark:border-color7 dark:bg-color7 dark:text-color10 dark:hover:bg-dark-color1 dark:hover:border-dark-color10 dark:hover:shadow-custom-gray dark:hover:text-dark-color10 text-color1 bg-color7 hover:bg-color3 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl" 

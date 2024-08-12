@@ -4,6 +4,7 @@ export default function ProyectosAdmin() {
 
     const { proyectos } = usePortafolio()
 
+    
   return (
     <>
     <div className="bg-gray-200 dark:bg-dark-color1 p-8  flex flex-col h-full">

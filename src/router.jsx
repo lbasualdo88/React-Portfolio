@@ -9,7 +9,10 @@ import Proyectos from './views/Proyectos'
 import Readmi from './views/Readmi'
 import PrivateRoute from './components/PrivateRoute'
 import Pagina404 from './views/Pagina404'
-
+import PanelAdmin from './admin/PanelAdmin'
+import MisPost from './admin/MisPost'
+import NuevoPost from './admin/NuevoPost'
+import Blog from './blog/Blog'
 
 const router = createBrowserRouter([
     {
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
         ]       
     },
     {
+        path: 'blog',
+        element: <Blog />,
+    },
+    {
         path: 'login',
         element: <Login />,
     },
@@ -45,11 +52,23 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                element: <PanelAdmin />
+            },
+            {
+                path: 'misProyectos',
                 element: <ProyectosAdmin />
             },
             {
-                path: 'admin/registroProyecto',
+                path: 'registroProyecto',
                 element: <RegistroProyecto />
+            },
+            {
+                path: 'misPost',
+                element: <MisPost />
+            },
+            {
+                path: 'registroPost',
+                element: <NuevoPost />
             },
         ]
     },
