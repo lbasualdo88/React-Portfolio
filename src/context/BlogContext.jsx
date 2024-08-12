@@ -26,8 +26,13 @@ const BlogProvider = ({ children }) => {
     };
 
     const eliminarPost = async (postId) => {
+        const token = localStorage.getItem('AUTH_TOKEN'); 
         try {
-            await clienteAxios.delete(`/api/post/${postId}`);
+            await clienteAxios.delete(`/api/post/${postId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`, // Incluir el token en los encabezados
+                },
+            });
             setPost(post.filter((p) => p.id !== postId));
         } catch (error) {
             console.log(error);
