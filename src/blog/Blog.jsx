@@ -4,7 +4,7 @@ import useBlog from '../hooks/useBlog';
 export default function Blog() {
     const { post } = useBlog();
     const baseURL = import.meta.env.VITE_API_URL;
-    console.log(baseURL);
+    console.log(post);
 
     const createContentWithImages = (post) => {
         let description = post.description; 
