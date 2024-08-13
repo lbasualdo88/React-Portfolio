@@ -13,7 +13,7 @@ export default function Blog() {
         if (post.images && post.images.length > 0) {
             post.images.forEach((image, index) => {
                 const regex = new RegExp(`\\{imagen\\[${index}\\]\\}`, 'g');
-                const imageTag = `<img src="${baseURL}/storage/app/public/${image.image_path}" alt="imagen ${index}" />`;
+                const imageTag = `<img src="${baseURL}/storage/${image.image_path}" alt="imagen ${index}" />`;
                 description = description.replace(regex, imageTag);
                 console.log(imageTag)
             });
