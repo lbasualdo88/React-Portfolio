@@ -24,7 +24,7 @@ export default function Busqueda({ onBuscar }) {
                         onSubmit={handleSubmit}
                         noValidate
                     >
-                        <div className="flex items-center justify-around">
+                        <div className="flex flex-col md:flex-row items-center justify-around">
                             <div className="mb-5">
                                 <label className="block mb-1 text-xl text-gray-700 uppercase font-bold dark:text-dark-color5">Por Categoría</label>
                                 <select className="border-gray-300 p-2 w-full dark:bg-dark-color3 dark:text-dark-color5 " ref={categoriaRef}>
