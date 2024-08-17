@@ -54,7 +54,13 @@ export default function Proyecto({ proyecto }) {
               );
             })}
           </div>
-          <div className="flex flex-col md:flex-row gap-4 items-center">
+          <div
+              className={
+                    proyecto.repository2_url
+                    ? "flex flex-col md:grid md:grid-cols-2 gap-4 items-center"
+                    : "flex flex-col md:flex-row gap-4 items-center"
+              }
+          >
             <a
               className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
               href={proyecto.repository_url}
