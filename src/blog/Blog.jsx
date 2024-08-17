@@ -1,39 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useBlog from '../hooks/useBlog';
 
 export default function Blog() {
     const { post } = useBlog();
     const baseURL = import.meta.env.VITE_API_URL;
-    console.log(post);
+
+    const [loading, setLoading] = useState({});  // Estado para controlar la carga de múltiples imágenes
 
     const createContentWithImages = (post) => {
         let description = post.description; 
 
-
         if (post.images && post.images.length > 0) {
             post.images.forEach((image, index) => {
                 const regex = new RegExp(`\\{imagen\\[${index}\\]\\}`, 'g');
-                const imageTag = `<img src="${baseURL}/${image.image_path}" alt="imagen ${index}" />`;
+
+                // Generar HTML para la imagen con spinner
+                const imageTag = `
+                    <div class="relative">
+                        <div class="spinner-container-${index}">
+                            ${loading[index] ? `
+                                <div class="absolute inset-0 flex justify-center items-center">
+                                    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+                                </div>` : ''}
+                        </div>
+                        <img src="${baseURL}/${image.image_path}" 
+                            alt="imagen ${index}" 
+                            class="m-auto py-4 opacity-${loading[index] ? '0' : '100'}"
+                            onload="document.querySelector('.spinner-container-${index}').innerHTML = '';"
+                            onerror="document.querySelector('.spinner-container-${index}').innerHTML = '';"
+                        />
+                    </div>
+                `;
+                
                 description = description.replace(regex, imageTag);
-                console.log(imageTag)
             });
         }
         return description;
     };
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString(); 
+    };
+
     return (
-        <div className="bg-gray-200 dark:bg-dark-color1 p-8 flex flex-col h-full">
-            <div className="w-auto p-8">
-                <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Post</h1>
-            </div>
+        <div className="bg-color1 dark:bg-dark-color1 p-8 flex flex-col h-full">
+            
             <div className="flex flex-col">
                 {post.map((post, index) => (
                     <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
                         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                             <div className="flex flex-col">
-                                <h2 className="font-bold text-3xl text-color8 dark:text-dark-color8 text-center">{post.title}</h2>
-                                <span className="text-2xl text-color5 dark:text-dark-color5">Categoria: {post.categoria}</span>
-                                <div className="text-2xl text-color5 dark:text-dark-color5" dangerouslySetInnerHTML={{ __html: createContentWithImages(post) }} />
+                                <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
+                                <div className='grid grid-cols-2 items-center gap-[20rem] m-auto'>
+                                    <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Categoría: {post.categoria}</span>
+                                    <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Fecha: {formatDate(post.created_at)}</span>
+                                </div>
+                                <div className="text-2xl text-color5 dark:text-dark-color5 pt-4" dangerouslySetInnerHTML={{ __html: createContentWithImages(post) }} />
                             </div>
                         </div>
                     </section>

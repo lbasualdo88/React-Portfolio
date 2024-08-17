@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import usePortafolio from "../hooks/usePortafolio";
@@ -43,7 +43,9 @@ export default function Readmi() {
     
   }));
   
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

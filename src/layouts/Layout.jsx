@@ -1,26 +1,39 @@
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../template/Footer';
 import Header from '../template/Header';
 import HeaderProyectos from '../template/HeaderProyectos';
 
 export default function Layout() {
-    const { id } = useParams();
     const location = useLocation();
 
-   
+    // Función para validar si la ruta actual coincide con una ruta definida
+    const matchPath = (pathPattern) => {
+        const pathRegex = new RegExp(
+            `^${pathPattern.replace(/:[^\s/]+/g, '([\\w-]+)')}$`
+        );
+        return pathRegex.test(location.pathname);
+    };
+
+    // Rutas que utilizarán HeaderProyectos
+    const rutasHeaderProyectos = [
+        '/proyectos',
+        '/proyecto/readmi/:id',
+        '/blog',
+        '/blog/:id',
+        '/login'
+    ];
+
+    // Determinar el header a mostrar basado en la ruta actual
+    const shouldUseHeaderProyectos = rutasHeaderProyectos.some(matchPath);
+    const HeaderComponent = shouldUseHeaderProyectos ? HeaderProyectos : Header;
+
     return (
-        <>
-        <body className=' dark:bg-dark-color1'>
-              {location.pathname === '/proyectos' || location.pathname === `/proyecto/readmi/${id}` ? (
-                <HeaderProyectos />
-            ) : (
-                <Header />
-            )}
+        <div className='dark:bg-dark-color1'>
+            <HeaderComponent />
             <main className='flex-1 bg-color1 dark:bg-dark-color1 lg:h-max'>
                 <Outlet />
             </main>
             <Footer />
-        </body>
-        </>
+        </div>
     );
 }

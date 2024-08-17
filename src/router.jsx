@@ -12,6 +12,7 @@ import Pagina404 from './views/Pagina404'
 import PanelAdmin from './admin/PanelAdmin'
 import MisPost from './admin/MisPost'
 import NuevoPost from './admin/NuevoPost'
+import TodosLosBlog from './blog/TodosLosBlog'
 import Blog from './blog/Blog'
 
 const router = createBrowserRouter([
@@ -30,13 +31,17 @@ const router = createBrowserRouter([
             {
                 path: 'proyecto/readmi/:id',
                 element: <Readmi />
-            }
+            },
+            {
+                path: 'blog',
+                element: <TodosLosBlog />,
+            },
+            {
+                path: 'blog/:id',
+                element: <Blog />,
+            },
            
         ]       
-    },
-    {
-        path: 'blog',
-        element: <Blog />,
     },
     {
         path: 'login',

@@ -21,7 +21,7 @@ export default function UltimosProyectos({ direction = 'left', speed, proyectos 
           x: {
             repeat: Infinity,
             repeatType: 'loop',
-            duration: speed / 1000,
+            duration:  100,
             ease: 'linear',
           },
         },
