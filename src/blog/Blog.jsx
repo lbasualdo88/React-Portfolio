@@ -61,7 +61,7 @@ export default function Blog() {
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col">
                         <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center gap-[20rem] m-auto'>
+                        <div className='flex flex-col md:grid md:grid-cols-2 items-center gap-4 md:gap-[20rem] m-auto'>
                             <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Categoría: {post.categoria}</span>
                             <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Fecha: {formatDate(post.created_at)}</span>
                         </div>
