@@ -24,8 +24,8 @@ export default function Busqueda({ onBuscar }) {
                         onSubmit={handleSubmit}
                         noValidate
                     >
-                        <div className="flex flex-col md:flex-row items-center justify-around">
-                            <div className="mb-5">
+                        <div className="flex flex-col md:flex-row items-center justify-around gap-12">
+                            <div className="mb-5 w-full">
                                 <label className="block mb-1 text-xl text-gray-700 uppercase font-bold dark:text-dark-color5">Por Categoría</label>
                                 <select className="border-gray-300 p-2 w-full dark:bg-dark-color3 dark:text-dark-color5 " ref={categoriaRef}>
                                     <option>-- Seleccione --</option>
@@ -45,7 +45,7 @@ export default function Busqueda({ onBuscar }) {
                                     <option>Otro</option>                      
                                 </select>
                             </div>
-                            <div className="mb-5">
+                            <div className="mb-5 w-full">
                                 <label className="block mb-1 text-xl text-gray-700 uppercase font-bold dark:text-dark-color5">Por Fecha</label>
                                 <input 
                                     type="date" 
@@ -53,7 +53,7 @@ export default function Busqueda({ onBuscar }) {
                                     ref={fechaRef} 
                                 />
                             </div>
-                        <div className="">
+                        <div className="w-full">
                             <input 
                                 type="submit"
                                 className="dark:bg-dark-color1 dark:hover:shadow-button-dark border-2 border-solid hover:border-color7 hover:bg-color1 bg-color7 transition-colors hover:text-color7 text-color1 text-xl font-bold px-10 py-4  rounded-xl cursor-pointer uppercase w-full md:w-auto"
