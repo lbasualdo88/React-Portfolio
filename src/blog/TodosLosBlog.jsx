@@ -4,9 +4,7 @@ import useBlog from '../hooks/useBlog';
 import BusquedaBlog from '../blog/BusquedaBlog';
 
 export default function TodosLosBlog() {
-
-    const { post } = useBlog();
-
+    const { post: posts } = useBlog(); // Renombrar 'post' a 'posts'
     const [filtros, setFiltros] = useState({});
     const [loading, setLoading] = useState(true);  // Estado para controlar la carga de la imagen
 
@@ -21,11 +19,11 @@ export default function TodosLosBlog() {
         setFiltros(datos);
     };
 
-    const filtrarPublicaciones = (post) => {
+    const filtrarPublicaciones = (posts) => { // Cambiar el parámetro a 'posts'
         const { categoria, fecha } = filtros;
 
         // Ordenar publicaciones por fecha de publicación (de la más reciente a la más antigua)
-        let publicacionesFiltradas = [...post].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+        let publicacionesFiltradas = [...posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
         // Aplicar filtro por categoría si está seleccionado
         if (categoria && categoria !== "-- Seleccione --") {
@@ -50,7 +48,7 @@ export default function TodosLosBlog() {
                     <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Post</h1>
                 </div>
                 <div className="flex flex-col">
-                    {filtrarPublicaciones(post).map((post, index) => {
+                    {filtrarPublicaciones(posts).map((post, index) => { // Cambiar 'post' a 'posts'
                         const img = `${baseURL}/${post.images[0].image_path}`;
                         return (
                             <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">

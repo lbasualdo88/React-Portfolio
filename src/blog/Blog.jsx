@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import useBlog from '../hooks/useBlog';
 
 export default function Blog() {
-    const { post } = useBlog();
+    const { id } = useParams(); // Obtener el ID del post desde la URL
+    const { post: posts } = useBlog(); // Renombrar 'post' a 'posts'
     const baseURL = import.meta.env.VITE_API_URL;
 
     const [loading, setLoading] = useState({});  // Estado para controlar la carga de múltiples imágenes
+    const [post, setPost] = useState(null); // Estado para el post específico
+
+    useEffect(() => {
+        // Filtrar el post que coincide con el ID
+        setPost(posts.find(p => p.id === parseInt(id, 10)));
+    }, [id, posts]);
 
     const createContentWithImages = (post) => {
         let description = post.description; 
@@ -43,25 +51,24 @@ export default function Blog() {
         return date.toLocaleDateString(); 
     };
 
+    if (!post) {
+        return <p>Cargando...</p>; // Mensaje de carga mientras se obtiene el post
+    }
+
     return (
         <div className="bg-color1 dark:bg-dark-color1 p-8 flex flex-col h-full">
-            
-            <div className="flex flex-col">
-                {post.map((post, index) => (
-                    <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
-                        <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-                            <div className="flex flex-col">
-                                <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
-                                <div className='grid grid-cols-2 items-center gap-[20rem] m-auto'>
-                                    <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Categoría: {post.categoria}</span>
-                                    <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Fecha: {formatDate(post.created_at)}</span>
-                                </div>
-                                <div className="text-2xl text-color5 dark:text-dark-color5 pt-4" dangerouslySetInnerHTML={{ __html: createContentWithImages(post) }} />
-                            </div>
+            <section className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+                    <div className="flex flex-col">
+                        <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
+                        <div className='grid grid-cols-2 items-center gap-[20rem] m-auto'>
+                            <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Categoría: {post.categoria}</span>
+                            <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Fecha: {formatDate(post.created_at)}</span>
                         </div>
-                    </section>
-                ))}
-            </div>
+                        <div className="text-2xl text-color5 dark:text-dark-color5 pt-4" dangerouslySetInnerHTML={{ __html: createContentWithImages(post) }} />
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
