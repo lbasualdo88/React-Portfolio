@@ -76,7 +76,7 @@ export default function Readmi() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Repo
+              {proyecto.repository2_url ? "Repo-Back" : "Repo"}
             </a>
             {proyecto.repository2_url ? (
               <a 
@@ -85,7 +85,7 @@ export default function Readmi() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Repo
+                Repo-Front
               </a>
             ) : null}
             <a 
