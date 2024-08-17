@@ -67,7 +67,7 @@ export default function Proyecto({ proyecto }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-             {proyecto.repository2_url ? "Repo-Front" : "Repo"}
+             {proyecto.repository2_url ? "Repo-Back" : "Repo"}
             </a>
             {proyecto.repository2_url ? (
               <a
@@ -76,7 +76,7 @@ export default function Proyecto({ proyecto }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Repo-Back
+                Repo-Front
               </a>
             ) : null}
             <a
