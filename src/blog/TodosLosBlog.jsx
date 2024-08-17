@@ -45,7 +45,7 @@ export default function TodosLosBlog() {
             />
             <div className="bg-color1 dark:bg-dark-color1 p-8 flex flex-col h-full">
                 <div className="w-auto p-8">
-                    <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Post</h1>
+                    <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Publicaciones</h1>
                 </div>
                 <div className="flex flex-col">
                     {filtrarPublicaciones(posts).map((post, index) => { // Cambiar 'post' a 'posts'

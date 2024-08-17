@@ -31,10 +31,10 @@ export default function Admin() {
                     to="/admin/misProyectos"> Mis Proyectos</Link>
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
-                    to="/admin/misPost"> Mis Post</Link>
+                    to="/admin/misPost"> Mis Publicaciones</Link>
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
-                    to="/admin/registroPost"> Crear Post</Link>
+                    to="/admin/registroPost"> Crear Publicacion</Link>
                     <Link
                     className="dark:border-color7 dark:hover:text-dark-color10 dark:hover:border-dark-color10 dark:shadow-button-dark dark:hover:shadow-custom-gray hover:text-color3 text-color7 no-underline gap-4 text-3xl font-bold p-4 text-center border-2 border-color1 rounded-xl hover:border-color3" 
                     to="/admin/registroProyecto">Crear Proyecto</Link>
