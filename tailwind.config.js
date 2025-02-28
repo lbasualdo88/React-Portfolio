@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gimnasio': "url('/img/movil.avif')",
+      },
       colors: {
         color1: '#ffffff',// Background Primario
         color2: '#F5F5F5',

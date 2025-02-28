@@ -62,20 +62,20 @@ export default function TodosLosBlog() {
                                         </div>
 
                                         {/* Contenedor de la imagen con spinner */}
-                                        <div className="relative">
+                                      {/*  <div className="relative">
                                             {loading && (
                                                 <div className="absolute inset-0 flex justify-center items-center">
                                                     <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>  {/* Spinner de Tailwind */}
-                                                </div>
+                                      {/*          </div>
                                             )}
-                                            <img 
+                                           <img 
                                                 src={img} 
                                                 alt={`imagen ${index}`} 
                                                 className={`m-auto w-auto h-auto text-color1 ${loading ? 'opacity-0' : 'opacity-100'}`} 
                                                 onLoad={() => setLoading(false)} 
                                                 onError={() => setLoading(false)}  // Oculta el spinner si hay un error al cargar la imagen
                                             />
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>
