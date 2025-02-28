@@ -47,13 +47,13 @@ export default function TodosLosBlog() {
                 <div className="w-auto p-8">
                     <h1 className="text-center text-bold font-krub text-color8 uppercase text-4xl dark:text-dark-color8">Mis Publicaciones</h1>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col md:grid md:grid-cols-2"> 
                     {filtrarPublicaciones(posts).map((post, index) => { // Cambiar 'post' a 'posts'
                         const img = `${baseURL}/${post.images[0].image_path}`;
                         return (
                             <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
                                 <div className="flex flex-col lg:flex-row items-center justify-between gap-4 py-8">
-                                    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+                                  {/*  <div className="flex flex-col gap-4"> */}
                                         <div className='flex flex-col'>
                                             <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
                                             <span className="text-3xl text-color5 dark:text-dark-color5 py-4 font-bold">Categoría: {post.categoria}</span>
@@ -77,7 +77,7 @@ export default function TodosLosBlog() {
                                             />
                                         </div> */}
 
-                                    </div>
+                                  {/*  </div> */}
                                 </div>
                                 <div className='flex m-auto w-80'>
                                     <Link
