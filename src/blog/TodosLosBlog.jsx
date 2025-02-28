@@ -52,7 +52,7 @@ export default function TodosLosBlog() {
                         const img = `${baseURL}/${post.images[0].image_path}`;
                         return (
                             <section key={index} className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
-                                <div className="flex flex-col lg:flex-row items-center justify-between gap-4 py-8">
+                                <div className="flex flex-col lg:flex-row items-center justify-around gap-4 py-8">
                                   {/*  <div className="flex flex-col gap-4"> */}
                                         <div className='flex flex-col'>
                                             <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
