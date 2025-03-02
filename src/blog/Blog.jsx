@@ -57,7 +57,7 @@ export default function Blog() {
 
     return (
         <div className="bg-color1 dark:bg-dark-color1 p-8 flex flex-col h-full">
-            <section className="m-8 p-8 shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
+            <section className="m-8 p-8 lg:shadow-custom bg-color1 rounded-lg dark:bg-dark-color1 lg:dark:shadow-custom-dark">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col">
                         <h2 className="font-bold text-4xl text-color8 dark:text-dark-color8 text-center py-8">{post.title}</h2>
