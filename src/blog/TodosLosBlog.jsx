@@ -79,7 +79,7 @@ export default function TodosLosBlog() {
 
                                   {/*  </div> */}
                                 </div>
-                                <div className='mt-auto flex justify-center w-80'>
+                                <div className='mx-auto mt-auto flex justify-center w-80'>
                                     <Link
                                         className="m-auto boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
                                         to={`/blog/${post.id}`}>Leer
