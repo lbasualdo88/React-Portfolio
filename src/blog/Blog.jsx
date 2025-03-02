@@ -33,7 +33,7 @@ export default function Blog() {
                         </div>
                         <img src="${baseURL}/${image.image_path}" 
                             alt="imagen ${index}" 
-                            class="m-auto py-4 opacity-${loading[index] ? '0' : '100'}"
+                            class="m-auto py-4 opacity-${loading[index] ? '0' : '100'} max-w-full h-auto object-contain"
                             onload="document.querySelector('.spinner-container-${index}').innerHTML = '';"
                             onerror="document.querySelector('.spinner-container-${index}').innerHTML = '';"
                         />
