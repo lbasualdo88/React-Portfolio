@@ -51,7 +51,7 @@ export default function TodosLosBlog() {
                     {filtrarPublicaciones(posts).map((post, index) => { // Cambiar 'post' a 'posts'
                         const img = `${baseURL}/${post.images[0].image_path}`;
                         return (
-                            <section key={index} className="m-8 p-8 shadow-custom justify-around bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
+                            <section key={index} className="flex flex-col m-8 p-8 shadow-custom justify-around bg-color1 rounded-lg dark:bg-dark-color1 dark:shadow-custom-dark">
                                 <div className="flex flex-col lg:flex-row items-center justify-around gap-4 py-8">
                                   {/*  <div className="flex flex-col gap-4"> */}
                                         <div className='flex flex-col'>
@@ -79,7 +79,7 @@ export default function TodosLosBlog() {
 
                                   {/*  </div> */}
                                 </div>
-                                <div className='flex m-auto w-80'>
+                                <div className='mt-auto flex justify-center w-80'>
                                     <Link
                                         className="m-auto boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
                                         to={`/blog/${post.id}`}>Leer
