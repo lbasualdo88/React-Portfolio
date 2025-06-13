@@ -30,68 +30,30 @@ export default function Proyecto({ proyecto }) {
 
   return (
     <>
-      <section className="flex flex-col md:grid md:grid-cols-2 justify-center items-center contenedor shadow-custom dark:shadow-custom-dark py-12 md:p-8 m-auto rounded-lg max-w-4xl mt-10 md:mt-20  gap-8">
+      <section className="flex flex-col justify-between shadow-custom dark:shadow-custom-dark p-6 rounded-lg h-full">
         <div className="w-full">
           <img
-            className="w-full h-full"
+            className="w-full h-64 object-cover rounded-md"
             src={imagePath}
             alt="imagen proyecto"
           />
         </div>
         <div className="w-full flex flex-col">
-          <h2 className="text-center font-bold uppercase text-4xl text-color8 dark:text-dark-color8">{proyecto.title}</h2>
+          <h2 className="text-center font-bold uppercase text-4xl text-color8 dark:text-dark-color8 min-h-[3rem] line-clamp-2 pt-3">{proyecto.title}</h2>
           <span className="text-center text-3xl text-color8 justify-center dark:text-dark-color5">{proyecto.categoria}</span>
           <span className="text-center text-2xl text-color5 justify-center dark:text-dark-color8">{proyecto.tipo}</span>
-          <div className="md:icon-container flex flex-wrap justify-center gap-1">
-            {proyecto.iconos.map((icono, index) => {
-              const IconComponent = iconMap[icono.name];
-              return (
-                <IconComponent
-                  key={index}
-                  className="text-color7 w-auto h-20"
-                  aria-label={icono.name}
-                />
-              );
-            })}
-          </div>
+          
           <div
               className={
-                    proyecto.repository2_url
-                    ? "flex flex-col md:grid md:grid-cols-2 gap-4 items-center"
-                    : "flex flex-col md:flex-row gap-4 items-center"
+                     "flex flex-col gap-4 items-center"
               }
           >
-            <a
-              className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
-              href={proyecto.repository_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-             {proyecto.repository2_url ? "Repo-Back" : "Repo"}
-            </a>
-            {proyecto.repository2_url ? (
-              <a
-                className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
-                href={proyecto.repository2_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Repo-Front
-              </a>
-            ) : null}
-            <a
-              className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
-              href={proyecto.deployed_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deploy
-            </a>
+            
             <Link
-              className="boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
+              className=" boton border-2 border-solid border-color7 bg-color1 hover:bg-color7 hover:text-color1 text-color7 dark:hover:shadow-hover-dark dark:hover:border-dark-color10 dark:bg-dark-color1 dark:shadow-button-dark"
               to={`/proyecto/readmi/${proyecto.id}`}
             >
-              Readme
+              Ver proyecto
             </Link>
           </div>
         </div>

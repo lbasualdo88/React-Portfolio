@@ -46,9 +46,11 @@ export default function Proyectos() {
                 <div className="w-12 h-12 border-4 border-t-4 border-gray-200 border-t-gray-600 rounded-full animate-spin"></div>
               </div>
             ) : (
-              proyectos.filter(filtrarProyectos).map((proyecto, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-8 auto-rows-fr">
+              {proyectos.filter(filtrarProyectos).map((proyecto, index) => (
                 <Proyecto key={index} proyecto={proyecto} />
-              ))
+              ))}
+              </div>
       )}
     </motion.div>
     </>
