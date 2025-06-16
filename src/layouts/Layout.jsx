@@ -28,9 +28,9 @@ export default function Layout() {
     const HeaderComponent = shouldUseHeaderProyectos ? HeaderProyectos : Header;
 
     return (
-        <div className='dark:bg-dark-color1'>
+        <div className='flex flex-col dark:bg-dark-color1 min-h-screen'>
             <HeaderComponent />
-            <main className='flex-1 bg-color1 dark:bg-dark-color1 lg:h-max'>
+            <main className='flex-1 bg-color1 dark:bg-dark-color1 h-max pb-12'>
                 <Outlet />
             </main>
             <Footer />
